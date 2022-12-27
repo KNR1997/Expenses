@@ -35,9 +35,11 @@ const ExpenseForm = (props) => {
         setTitle('');
         setAmount('');
         setDate('');
+
+        setIsShown(current => !current);
     };
 
-    const handleClick = event => {
+    const handleAddNewExpense = event => {
         setIsShown(current => !current);
     }
 
@@ -46,7 +48,7 @@ const ExpenseForm = (props) => {
         <div>
             {!isShown && (
                 <div className='new-expense__actions'>
-                    <button onClick={handleClick}>Add New Expense</button>
+                    <button onClick={handleAddNewExpense}>Add New Expense</button>
                 </div>
             )}
 
@@ -70,8 +72,8 @@ const ExpenseForm = (props) => {
                             </div>
                     </div>
                     <div className="new-expense__actions">
-                        <button onClick={handleClick}>Cancel</button>
-                        <button type='submit' onClick={handleClick}>Add Expense</button>
+                        <button onClick={handleAddNewExpense}>Cancel</button>
+                        <button type='submit'>Add Expense</button>
                     </div>
                 </form>
 
